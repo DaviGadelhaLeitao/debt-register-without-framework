@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro</title>
+<link rel="stylesheet" type="text/css" href="css/adiciona-caloteiro.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="header">
+		<div class="container">
+			<p>Contabilidade & Cobrança</p>
+			<ul class="pull-right">
+				<li><a href="homepage.html">Página Inicial</a></li>
+				<li><a href="adiciona-caloteiro.html">Cadastro</a></li>
+				<li><a href="listaCaloteiro.jsp">Listagem de inadimplentes</a></li>
+				<li><a href="consulta-caloteiro.html">Consultas</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="main">
+		<div class="container">
+			<div class="adiciona-caloteiro-form">
+				<form action="adicionaCaloteiro" method="POST">
+					<div class="form-group">
+						<label for="nome">Nome:</label> <input type="text"
+							class="form-control" id="nome" name="nome">
+					</div>
+					<div class="form-group">
+						<label for="email">Email:</label> <input type="text"
+							class="form-control" id="email" name="email" />
+					</div>
+					<div class="form-group">
+						<label for="devendo">Devendo R$:</label> <input type="text"
+							class="form-control" id="devendo" name="devendo" />
+					</div>
+					<div class="form-group">
+						<label for="dataDivida">Data:</label> <input type="text"
+							class="form-control" id="dataDivida" name="dataDivida" />
+					</div>
+					<input type="submit" value="Salvar" />
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="container">
+			<ul>
+				<li>Contabilidade & Cobrança</li>
+				<li>davi.leitao@hotmail.com</li>
+				<li>Fortaleza, Ceará</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
