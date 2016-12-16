@@ -1,2 +1,1 @@
-# CobrancaEContabilidade
-Este projeto é um sistema de cadastro e consultas de pessoas inadimplentes.
+Este é um projeto de cadastro e controle de débitos financeiros.
