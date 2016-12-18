@@ -1,10 +1,8 @@
 package br.com.triadworks.java.main;
 
 
-import java.sql.Connection;
 
 import br.com.triadworks.javaweb.dao.CaloteiroDAO;
-import br.com.triadworks.javaweb.dao.ConnectionFactory;
 import br.com.triadworks.javaweb.modelo.Caloteiro;
 
 public class SistemaCaloteiro {

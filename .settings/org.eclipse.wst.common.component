@@ -2,6 +2,7 @@
     <wb-module deploy-name="calote-web">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test-integracao"/>
         <property name="context-root" value="calote-web"/>
         <property name="java-output-path" value="/calote-web/build/classes"/>
     </wb-module>

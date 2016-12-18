@@ -17,20 +17,12 @@ import br.com.triadworks.javaweb.dao.CaloteiroDAO;
 import br.com.triadworks.javaweb.modelo.Caloteiro;
 
  
-/* pega os dados da requisição e seta num objeto caloteiro. Depois salva no banco usando
- *  o DAO e exibe um HTML com o resultado * 
- */
 @WebServlet("/adicionaCaloteiro")
 public class AdicionaCaloteiro extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		/*********************************************
-		 *** PARTE 1 - PEGA OS DADOS DA REQUISIÇÃO ***
-		 *********************************************/
-		
-		// elemento que vai fazer utilizado para exibir uma saída HTML
 		PrintWriter out = response.getWriter();
 		
 		String nome = request.getParameter("nome");
@@ -46,11 +38,6 @@ public class AdicionaCaloteiro extends HttpServlet {
 			out.println("Erro de conversão de data.");
 		}
 		
-		
-		/*********************************************
-		 *** PARTE 2 - MONTA UM OBJETO CALOTEIRO   ***
-		 *********************************************/
-		
 		Caloteiro caloteiro = new Caloteiro();
 		
 		caloteiro.setNome(nome);
@@ -58,10 +45,6 @@ public class AdicionaCaloteiro extends HttpServlet {
 		caloteiro.setDevendo(new Integer(devendo));
 		caloteiro.setDataDivida(dataDividaConvertida);
 		
-		
-		/*********************************************
-		 *** PARTE 3 - SALVA NO BANCO e EXIBE UM HTML*
-		 *********************************************/
 		
 		CaloteiroDAO dao = new CaloteiroDAO();
 		dao.adiciona(caloteiro);
@@ -85,67 +68,3 @@ public class AdicionaCaloteiro extends HttpServlet {
 		super.doPost(request, response);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
