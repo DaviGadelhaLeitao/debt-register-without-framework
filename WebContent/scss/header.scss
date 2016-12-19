@@ -1,0 +1,41 @@
+#letter-spacing-3px {
+	letter-spacing: 3px;
+}
+	html {
+	background-color: gray;
+}
+body {
+	font-family: Raleway;
+}
+.header {
+	background-color: #1A3C36;
+	color: #fff;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: left;
+	font-size: 18px;
+	font-family: Raleway;
+	p {
+		color: #fff;
+		display: inline-block;
+		border-bottom: 1px solid #fff;
+		padding-bottom: 3px;
+	}
+	ul {
+		display: inline-block;
+		text-align: right;
+		list-style-type: none;
+		li {
+			display: inline-block;
+			a {
+				text-decoration: none;
+				margin-left: 15px;
+				color: #fff;
+				&:hover {
+					border-bottom: 1px solid #fff;
+					padding-bottom: 3px;
+				}
+			}
+		}
+	}
+}

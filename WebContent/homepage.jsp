@@ -1,27 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ include file="/includes.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Homepage</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home</title>
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
 
-	<div class="header">
-		<div class="container">
-			<p>Contabilidade & Cobrança</p>
-			<ul class="pull-right">
-				<li><a href="homepage.html">Página Inicial</a></li>
-				<li><a href="adiciona-caloteiro.html">Cadastro</a></li>
-				<li><a href="listaCaloteiro.jsp">Listagem de inadimplentes</a></li>
-				<li><a href="consulta-caloteiro.html">Consultas</a></li>
-			</ul>
-		</div>
-	</div>
+<c:import url="header.jsp"></c:import>
 
-	<div class="main">
+<div class="main">
 		<div class="container">
 			<h1>Seja bem vindo a nossa página de consultas financeiras!</h1>
 			<p id="letter-spacing-3px">Disponibilizamos este serviço gratuitamente para todos os
@@ -43,15 +36,7 @@
 		</div>
 	</div>
 
-	<div class="footer">
-		<div class="container">
-			<ul>
-				<li>Contabilidade & Cobrança</li>
-				<li>davi.leitao@hotmail.com</li>
-				<li>Fortaleza, Ceará</li>
-			</ul>
-		</div>
-	</div>
+<c:import url="footer.jsp"></c:import>
 
 </body>
 </html>
