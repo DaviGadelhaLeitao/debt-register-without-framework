@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,15 +46,12 @@ public class AdicionaCaloteiro extends HttpServlet {
 		caloteiro.setDevendo(new Integer(devendo));
 		caloteiro.setDataDivida(dataDividaConvertida);
 		
-		
 		CaloteiroDAO dao = new CaloteiroDAO();
 		dao.adiciona(caloteiro);
 		
-		out.println("<html>");
-		out.println("<body>");
-		out.println("Caloteiro " + caloteiro.getNome() + " adicionado com sucesso.");
-		out.println("</body>");
-		out.println("</html>");
+		RequestDispatcher rd = request.getRequestDispatcher("/caloteiroAdicionado.jsp");
+		rd.forward(request, response);
+		
 	}
 
 	@Override

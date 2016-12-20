@@ -7,38 +7,6 @@
 body {
 	font-family: Raleway;
 }
-.header {
-	background-color: #1A3C36;
-	color: #fff;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	text-align: left;
-	font-size: 18px;
-	font-family: Raleway;
-	p {
-		color: #fff;
-		display: inline-block;
-		border-bottom: 1px solid #fff;
-		padding-bottom: 3px;
-	}
-	ul {
-		display: inline-block;
-		text-align: right;
-		list-style-type: none;
-		li {
-			display: inline-block;
-			a {
-				text-decoration: none;
-				margin-left: 15px;
-				color: #fff;
-				&:hover {
-					border-bottom: 1px solid #fff;
-					padding-bottom: 3px;
-				}
-			}
-		}
-	}
-}
 .main {
 	background: url('../images/caloteiroBg.jpg') no-repeat center center;
 	color: #fff;
@@ -71,21 +39,4 @@ body {
 			}
 		}
 	}	
-}
-.footer {
-	background-color: #1A3C36;
-	color: #fff;
-	font-size: 14px;
-	font-weight: 800;
-	letter-spacing: 2px;
-	color: #fff;
-	ul {
-		padding-top: 10px;
-		padding-bottom: 10px;
-		padding-left: 0px;
-		list-style-type: none;
-		li {
-			color: #fff;
-		}
-	}
 }
