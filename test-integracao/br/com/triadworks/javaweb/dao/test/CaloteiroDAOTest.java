@@ -1,5 +1,7 @@
 package br.com.triadworks.javaweb.dao.test;
 
+import static org.junit.Assert.*;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -7,7 +9,6 @@ import java.util.Calendar;
 import java.util.List;
 
 import org.junit.After;
-import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -33,7 +34,7 @@ public class CaloteiroDAOTest {
 			e.printStackTrace();
 		}
 	}
-
+	
 	private void limpaTabelaCaloteiro() {
 		String sql = "delete from caloteiro";
 
@@ -85,14 +86,18 @@ public class CaloteiroDAOTest {
 		assertEquals(lista.size(), 1);
 	}
 	
-	/*@Test
+	@Test
 	public void deveRetornarUmCaloteiro() {
 		Caloteiro caloteiro = getCaloteiroTeste("Joao");
 		
 		CaloteiroDAO dao = new CaloteiroDAO();
+		dao.adiciona(caloteiro);
 		caloteiro.setId(dao.getLista().get(0).getId());
+		Long id = caloteiro.getId();
+		Caloteiro caloteiroDoBanco = dao.getCaloteiro(id);
 		
-	}*/
+		assertEquals(dao.getLista().get(0).getId(), caloteiroDoBanco.getId());
+	}
 
 	
 }
