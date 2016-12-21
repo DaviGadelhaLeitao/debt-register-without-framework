@@ -10,7 +10,7 @@ public class ConnectionFactory {
 		try {
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			return DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/3WJavaWeb", "root", "1234");
+					"jdbc:mysql://localhost:3306/3WJavaWeb?verifyServerCertificate=false&useSSL=true", "root", "1234");
 		} catch (SQLException e) {
 			System.out.println("Erro enquanto tentava abrir conexão com o banco. ");
 			throw new RuntimeException(e);
