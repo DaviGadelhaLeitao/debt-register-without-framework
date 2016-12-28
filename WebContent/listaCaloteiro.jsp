@@ -1,7 +1,4 @@
 <%@ include file="/includes.jsp"%>
-<%@ page import="br.com.triadworks.javaweb.dao.CaloteiroDAO"%>
-<%@ page import="br.com.triadworks.javaweb.modelo.Caloteiro"%>
-<%@ page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -18,8 +15,6 @@
 
 	<c:import url="header.jsp"></c:import>
 
-	<jsp:useBean id="dao"
-		class="br.com.triadworks.javaweb.dao.CaloteiroDAO"></jsp:useBean>
 	<table border="1" id="lista-tabela">
 		<tr>
 			<td id="table-header">ID</td>
@@ -29,7 +24,8 @@
 			<td id="table-header">DATA</td>
 			<td id="table-header">AÇÃO</td>
 		</tr>
-		<c:forEach var="caloteiro" items="${dao.lista}" varStatus="id">
+
+		<c:forEach var="caloteiro" items="${lista}" varStatus="id">
 
 			<tr bgcolor="${id.count % 2 == 0 ? 'white' : 'gray' }">
 				<td>${id.count}</td>
@@ -63,11 +59,19 @@
 				</c:choose>
 
 				<td>
-					<form action="">
-						<button type="submit" id="table-btn">delete</button>
+					<form action="sistema?logica=DeletaCaloteiro&id=${caloteiro.id}"
+						method="POST">
+						<input type="submit" id="table-btn" value="Deleta" />
+					</form>
+				</td>
+				<td>
+					<form
+						action="sistema?logica=AlteraCaloteiro&id=${caloteiro.id}" method="POST">
+						<input type="submit" id="table-btn" value="Altera" />
 					</form>
 				</td>
 			</tr>
+
 		</c:forEach>
 	</table>
 

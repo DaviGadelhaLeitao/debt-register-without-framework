@@ -101,6 +101,7 @@ public class CaloteiroDAO {
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
 			stmt.setLong(1, caloteiro.getId());
+			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

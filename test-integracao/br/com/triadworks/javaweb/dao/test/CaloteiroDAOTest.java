@@ -58,6 +58,17 @@ public class CaloteiroDAOTest {
 		caloteiro.setDevendo(300);
 		return caloteiro;
 	}
+	
+	@Test
+	public void deveLimparATabelaDoBancoDeDados() {
+		CaloteiroDAO dao = new CaloteiroDAO();
+		
+		limpaTabelaCaloteiro();
+		
+		List<Caloteiro> lista = dao.getLista();
+		
+		assertEquals(0, lista.size());
+	}
 
 	@Test
 	public void deveAdicionarCaloteiroNoBanco() {
@@ -68,8 +79,9 @@ public class CaloteiroDAOTest {
 		dao.adiciona(caloteiro);
 
 		List<Caloteiro> lista = dao.getLista();
-		String nome = lista.get(0).getNome();
-		assertEquals(caloteiro.getNome(), nome);
+		
+		assertEquals(1, lista.size());
+		assertEquals("Joao", lista.get(0).getNome());
 	}
 
 	@Test
@@ -84,7 +96,7 @@ public class CaloteiroDAOTest {
 		dao.deleta(caloteiro);
 
 		List<Caloteiro> lista = dao.getLista();
-		assertEquals(lista.size(), 1);
+		assertEquals(0, lista.size());
 	}
 
 	@Test

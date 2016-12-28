@@ -15,7 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.triadworks.javaweb.dao.CaloteiroDAO;
+import br.com.triadworks.javaweb.modelo.AdicionaCaloteiroLogica;
 import br.com.triadworks.javaweb.modelo.Caloteiro;
+import br.com.triadworks.javaweb.modelo.Logica;
 
 @WebServlet("/sistema")
 public class ServletSistema extends HttpServlet {
@@ -23,47 +25,22 @@ public class ServletSistema extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String acao = request.getParameter("logica");
+		String nomeClasse = "br.com.triadworks.javaweb.modelo."+acao+"Logica";
 		
-		if(acao.equals("AdicionaCaloteiro")) {
-			
-			String nome = request.getParameter("nome");
-			String email = request.getParameter("email");
-			String devendo = request.getParameter("devendo");
-			String dataDivida = request.getParameter("dataDivida");
-			Calendar dataDividaConvertida = null;
-			try {
-				Date data = new SimpleDateFormat("dd/MM/yyyy").parse(dataDivida);
-				dataDividaConvertida = Calendar.getInstance();
-				dataDividaConvertida.setTime(data);
-			} catch (ParseException e) {
-				throw new RuntimeException();
-			}
-			
-			Caloteiro caloteiro = new Caloteiro();
-			
-			caloteiro.setNome(nome);
-			caloteiro.setEmail(email);
-			caloteiro.setDevendo(new Integer(devendo));
-			caloteiro.setDataDivida(dataDividaConvertida);
-			
-			
-			CaloteiroDAO dao = new CaloteiroDAO();
-			dao.adiciona(caloteiro);
-			
-			RequestDispatcher rd = request.getRequestDispatcher("/caloteiroAdicionado.jsp");
-			rd.forward(request, response);
-		} else if (acao.equals("ListaCaloteiro")) {
-			
-		} else if (acao.equals("AlteraCaloteiro")) {
-			
-		} else if (acao.equals("ListaCaloteiro")) {
-			
-		} else if (acao.equals("Deleta")) {
-			
+		try {
+			Class classe = Class.forName(nomeClasse);
+			Object obj = classe.newInstance();
+			Logica logica = (Logica) obj;
+			logica.executa(request, response);
+		} catch (ClassNotFoundException e) {
+			throw new CaloteiroServletException(e.getMessage());
+		} catch (InstantiationException | IllegalAccessException e) {
+			throw new CaloteiroServletException(e.getMessage());
+		} catch (Exception e) {
+			throw new CaloteiroServletException(e.getMessage());
 		}
-		
-		
 	}
 
 }

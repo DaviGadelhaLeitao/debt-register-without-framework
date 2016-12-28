@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ include file="includes.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,9 +15,10 @@
 			<p>Contabilidade & Cobrança</p>
 			<ul class="pull-right">
 				<li><a href="homepage.jsp">Página Inicial</a></li>
-				<li><a href="adicionaCaloteiro.jsp">Cadastro</a></li>
-				<li><a href="listaCaloteiro.jsp">Listagem de inadimplentes</a></li>
+				<li><a href="adicionaCaloteiro.jsp">Adicionar Caloteiro</a></li>
+				<li><a href="sistema?logica=ListaCaloteiro">Lista Caloteiro</a></li>
 				<li><a href="consultaCaloteiro.jsp">Consultas</a></li>
+
 			</ul>
 		</div>
 	</div>

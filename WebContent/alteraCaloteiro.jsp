@@ -20,22 +20,24 @@
 		<div class="container">
 			<div class="adiciona-caloteiro-form">
 				<form action="sistema" method="POST">
-				<input type="hidden" name="logica" value=AdicionaCaloteiro>
+				<input type="hidden" name="logica" value=ExecutaAlteracaoDeCaloteiro>
+				<input type="hidden" name="id" value="${caloteiro.id}"/>
 					<div class="form-group">
 						<label for="nome">Nome:</label> <input type="text"
-							class="form-control" id="nome" name="nome">
+							class="form-control" id="nome" name="nome" value="${caloteiro.nome}">
 					</div>
 					<div class="form-group">
 						<label for="email">Email:</label> <input type="text"
-							class="form-control" id="email" name="email" />
+							class="form-control" id="email" name="email" value="${caloteiro.email}"/>
 					</div>
 					<div class="form-group">
 						<label for="devendo">Devendo R$:</label> <input type="text"
-							class="form-control" id="devendo" name="devendo" />
+							class="form-control" id="devendo" name="devendo" value="${caloteiro.devendo}" />
 					</div>
 					<div class="form-group">
 						<label for="dataDivida">Data:</label> <input type="text"
-							class="form-control" id="dataDivida" name="dataDivida" />
+							class="form-control" id="dataDivida" name="dataDivida" value="<fmt:formatDate value="${caloteiro.dataDivida.time}" pattern="dd/MM/yyyy"/>" />
+															
 					</div>
 					<input type="submit" value="Salvar" />
 				</form>
