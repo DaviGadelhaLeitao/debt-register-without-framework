@@ -16,7 +16,7 @@
 			<ul class="pull-right">
 				<li><a href="homepage.jsp">Página Inicial</a></li>
 				<li><a href="adicionaCaloteiro.jsp">Adicionar Caloteiro</a></li>
-				<li><a href="sistema?logica=ListaCaloteiro">Lista Caloteiro</a></li>
+				<li><a href="sistema?logica=ListaCaloteiro" id="lista-caloteiro-menu">Lista Caloteiro</a></li>
 				<li><a href="consultaCaloteiro.jsp">Consultas</a></li>
 
 			</ul>

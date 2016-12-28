@@ -83,7 +83,7 @@ public class CaloteiroDAOTest {
 		assertEquals(1, lista.size());
 		assertEquals("Joao", lista.get(0).getNome());
 	}
-
+	
 	@Test
 	public void deveDeletarCaloteiroNoBanco() {
 
