@@ -37,6 +37,7 @@ public class CaloteiroDAOTestAceitacao {
 	
 	@Test
 	public void deveAdicionarUmCaloteiroAceitacao() throws SQLException {
+
 		
 //		Savepoint savepoint1 = connection.setSavepoint();
 //		
@@ -48,24 +49,32 @@ public class CaloteiroDAOTestAceitacao {
 //		}
 		WebDriver driver = new FirefoxDriver();
 		CaloteiroDAO dao = new CaloteiroDAO();
+		
 		Integer tamanhoInicialDaLista = dao.getLista().size();
-		System.out.println("Tamanho inicial da lista: " + tamanhoInicialDaLista);
 		
 		driver.get("http://localhost:8080/calote-web/adicionaCaloteiro.jsp");
+		waitForSelenium(new Long(500));
 		
 		WebElement campoDeTextoDoNome = driver.findElement(By.name("nome"));
 		campoDeTextoDoNome.sendKeys("Marcos Fernando Justino");
+		waitForSelenium(new Long(100));
 
 		WebElement campoDeTextoDoEmail = driver.findElement(By.name("email"));
 		campoDeTextoDoEmail.sendKeys("davi.leitao@hotmail.com");
+		waitForSelenium(new Long(100));
 		
 		WebElement campoDeTextoDaDivida = driver.findElement(By.name("devendo"));
 		campoDeTextoDaDivida.sendKeys("800");
+		waitForSelenium(new Long(100));
 		
 		WebElement campoDeTextoDaData = driver.findElement(By.name("dataDivida"));
 		campoDeTextoDaData.sendKeys("28/12/2016");
+		waitForSelenium(new Long(100));
 		
-		campoDeTextoDoNome.submit();
+		WebElement btnSubmit = driver.findElement(By.id("btn-submit"));
+		btnSubmit.click();
+		
+		waitForSelenium(new Long(1000));
 //		
 //		try {
 //			connection.commit();
@@ -75,17 +84,22 @@ public class CaloteiroDAOTestAceitacao {
 //			e.printStackTrace();
 //		}
 		
-		WebElement menuListaCaloteiros = driver.findElement(By.id("lista-caloteiro-menu"));
-		menuListaCaloteiros.click();
-		
 		Integer tamanhoFinalDaLista = dao.getLista().size();
+		
 		List<Caloteiro> lista = dao.getLista();
 		
-		assertEquals(lista.get(tamanhoFinalDaLista - 1).getNome(), "Marcos Fernando Justino");
 		assertEquals(Double.valueOf(tamanhoInicialDaLista + 1), new Double(tamanhoFinalDaLista));
+		assertEquals(lista.get(tamanhoFinalDaLista - 1).getNome(), "Marcos Fernando Justino");
 		
 		driver.close();
 		driver.quit();
-		
+	}
+
+	private void waitForSelenium(Long time) {
+		try {
+			Thread.sleep(time);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }

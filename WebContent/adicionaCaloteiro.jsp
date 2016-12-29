@@ -37,7 +37,7 @@
 						<label for="dataDivida">Data:</label> <input type="text"
 							class="form-control" id="dataDivida" name="dataDivida" />
 					</div>
-					<input type="submit" value="Salvar" />
+					<input type="submit" value="Salvar" id="btn-submit"/>
 				</form>
 			</div>
 		</div>
