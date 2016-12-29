@@ -1,21 +1,25 @@
 package br.com.triadworks.javaweb.selenium;
 
+import static org.junit.Assert.assertEquals;
+
 import java.sql.SQLException;
-import java.sql.Savepoint;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-
+import br.com.triadworks.javaweb.dao.CaloteiroDAO;
 import br.com.triadworks.javaweb.dao.ConnectionFactory;
+import br.com.triadworks.javaweb.modelo.Caloteiro;
 
 public class CaloteiroDAOTestAceitacao {
 	
 	private java.sql.Connection connection;
-	private static Long tempoDeEspera = new Long(300);
 	
 	@Before
 	public void setUp() {
@@ -25,7 +29,6 @@ public class CaloteiroDAOTestAceitacao {
 	@After
 	public void tearDown() {
 		try {
-			
 			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -35,21 +38,24 @@ public class CaloteiroDAOTestAceitacao {
 	@Test
 	public void deveAdicionarUmCaloteiroAceitacao() throws SQLException {
 		
-		Savepoint savepoint1 = connection.setSavepoint();
-		try {
-			connection.setAutoCommit(false);
-			
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
-		Thread thread = new Thread();
+//		Savepoint savepoint1 = connection.setSavepoint();
+//		
+//		try {
+//			connection.setAutoCommit(false);
+//			
+//		} catch (SQLException e1) {
+//			e1.printStackTrace();
+//		}
 		WebDriver driver = new FirefoxDriver();
+		CaloteiroDAO dao = new CaloteiroDAO();
+		Integer tamanhoInicialDaLista = dao.getLista().size();
+		System.out.println("Tamanho inicial da lista: " + tamanhoInicialDaLista);
 		
 		driver.get("http://localhost:8080/calote-web/adicionaCaloteiro.jsp");
 		
 		WebElement campoDeTextoDoNome = driver.findElement(By.name("nome"));
 		campoDeTextoDoNome.sendKeys("Marcos Fernando Justino");
-		
+
 		WebElement campoDeTextoDoEmail = driver.findElement(By.name("email"));
 		campoDeTextoDoEmail.sendKeys("davi.leitao@hotmail.com");
 		
@@ -59,29 +65,27 @@ public class CaloteiroDAOTestAceitacao {
 		WebElement campoDeTextoDaData = driver.findElement(By.name("dataDivida"));
 		campoDeTextoDaData.sendKeys("28/12/2016");
 		
-		wait(thread, new Long(tempoDeEspera));
-		
 		campoDeTextoDoNome.submit();
-		try {
-			connection.commit();
-			connection.rollback(savepoint1);
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		wait(thread, new Long(tempoDeEspera));
+//		
+//		try {
+//			connection.commit();
+//			connection.rollback(savepoint1);
+//			
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 		
 		WebElement menuListaCaloteiros = driver.findElement(By.id("lista-caloteiro-menu"));
 		menuListaCaloteiros.click();
 		
-	}
-	
-	private void wait(Thread thread, Long time) {
-		try {
-			thread.sleep(time);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		Integer tamanhoFinalDaLista = dao.getLista().size();
+		List<Caloteiro> lista = dao.getLista();
+		
+		assertEquals(lista.get(tamanhoFinalDaLista - 1).getNome(), "Marcos Fernando Justino");
+		assertEquals(Double.valueOf(tamanhoInicialDaLista + 1), new Double(tamanhoFinalDaLista));
+		
+		driver.close();
+		driver.quit();
+		
 	}
 }
