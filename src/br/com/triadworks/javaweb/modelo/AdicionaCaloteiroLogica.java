@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.triadworks.javaweb.dao.CaloteiroDAO;
 
 public class AdicionaCaloteiroLogica implements Logica {
-
 	
 	public void executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		

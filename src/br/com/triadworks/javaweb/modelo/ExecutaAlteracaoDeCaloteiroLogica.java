@@ -5,12 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.triadworks.javaweb.dao.CaloteiroDAO;
 
-public class ExecutaAlteracaoDeCaloteiro implements Logica {
+public class ExecutaAlteracaoDeCaloteiroLogica implements Logica {
 
 	@Override
 	public void executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -37,10 +38,10 @@ public class ExecutaAlteracaoDeCaloteiro implements Logica {
 		caloteiro.setDataDivida(dataDividaConvertida);
 		
 		CaloteiroDAO dao = new CaloteiroDAO();
-		dao.adiciona(caloteiro);
+		dao.altera(caloteiro);
 		
-		
-		
+		request.setAttribute("lista", dao.getLista());
+		RequestDispatcher rd = request.getRequestDispatcher("/listaCaloteiro.jsp");
+		rd.forward(request, response);
 	}
-
 }

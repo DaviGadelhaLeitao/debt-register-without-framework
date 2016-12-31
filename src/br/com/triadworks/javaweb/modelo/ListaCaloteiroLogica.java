@@ -20,5 +20,4 @@ public class ListaCaloteiroLogica implements Logica {
 		rd.forward(request, response);
 		
 	}
-	
 }
