@@ -61,7 +61,8 @@ public class CaloteiroDAOTest {
 	
 	@Test
 	public void deveLimparATabelaDoBancoDeDados() {
-		CaloteiroDAO dao = new CaloteiroDAO();
+		Connection conexao = new ConnectionFactory().getConnection();
+		CaloteiroDAO dao = new CaloteiroDAO(conexao);
 		
 		limpaTabelaCaloteiro();
 		
@@ -75,7 +76,8 @@ public class CaloteiroDAOTest {
 
 		Caloteiro caloteiro = getCaloteiroTeste("Joao");
 
-		CaloteiroDAO dao = new CaloteiroDAO();
+		Connection conexao = new ConnectionFactory().getConnection();
+		CaloteiroDAO dao = new CaloteiroDAO(conexao);
 		dao.adiciona(caloteiro);
 
 		List<Caloteiro> lista = dao.getLista();
@@ -89,7 +91,8 @@ public class CaloteiroDAOTest {
 
 		Caloteiro caloteiro = getCaloteiroTeste("Joao");
 
-		CaloteiroDAO dao = new CaloteiroDAO();
+		Connection conexao = new ConnectionFactory().getConnection();
+		CaloteiroDAO dao = new CaloteiroDAO(conexao);
 		dao.adiciona(caloteiro);
 
 		caloteiro.setId(dao.getLista().get(0).getId());
@@ -103,7 +106,8 @@ public class CaloteiroDAOTest {
 	public void deveRetornarUmCaloteiro() {
 		Caloteiro caloteiro = getCaloteiroTeste("Joao");
 
-		CaloteiroDAO dao = new CaloteiroDAO();
+		Connection conexao = new ConnectionFactory().getConnection();
+		CaloteiroDAO dao = new CaloteiroDAO(conexao);
 		dao.adiciona(caloteiro);
 		caloteiro.setId(dao.getLista().get(0).getId());
 		Long id = caloteiro.getId();
@@ -117,7 +121,8 @@ public class CaloteiroDAOTest {
 
 		Caloteiro caloteiro = getCaloteiroTeste("Joao");
 
-		CaloteiroDAO dao = new CaloteiroDAO();
+		Connection conexao = new ConnectionFactory().getConnection();
+		CaloteiroDAO dao = new CaloteiroDAO(conexao);
 		dao.adiciona(caloteiro);
 		String oldName = caloteiro.getNome();
 		Integer oldDevendo = caloteiro.getDevendo();

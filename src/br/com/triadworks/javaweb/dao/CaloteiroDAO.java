@@ -15,8 +15,8 @@ public class CaloteiroDAO {
 
 	private Connection conexao;
 
-	public CaloteiroDAO() {
-		this.conexao = new ConnectionFactory().getConnection();
+	public CaloteiroDAO(Connection conexao) {
+		this.conexao = conexao;
 	}
 
 	public void adiciona(Caloteiro caloteiro) {

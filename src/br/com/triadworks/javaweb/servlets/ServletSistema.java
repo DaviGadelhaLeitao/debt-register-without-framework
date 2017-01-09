@@ -29,8 +29,12 @@ public class ServletSistema extends HttpServlet {
 			throw new CaloteiroServletException(e.getMessage());
 		} catch (InstantiationException | IllegalAccessException e) {
 			throw new CaloteiroServletException(e.getMessage());
+		} catch (NullPointerException e) {
+			throw e;
 		} catch (Exception e) {
-			throw new CaloteiroServletException(e.getMessage());
+			System.out.println("Caught: " + e);
+			throw new CaloteiroServletException(e.getCause());
+			
 		}
 	}
 }

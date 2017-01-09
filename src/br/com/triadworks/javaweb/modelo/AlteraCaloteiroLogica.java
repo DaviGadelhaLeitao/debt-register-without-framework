@@ -1,5 +1,7 @@
 package br.com.triadworks.javaweb.modelo;
 
+import java.sql.Connection;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +13,7 @@ public class AlteraCaloteiroLogica implements Logica {
 	@Override
 	public void executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		Long id = new Long(request.getParameter("id"));
-		CaloteiroDAO dao = new CaloteiroDAO();
+		CaloteiroDAO dao = new CaloteiroDAO((Connection)request.getAttribute("conexao"));
 		Caloteiro caloteiro = new Caloteiro();
 		
 		caloteiro = dao.getCaloteiro(id);

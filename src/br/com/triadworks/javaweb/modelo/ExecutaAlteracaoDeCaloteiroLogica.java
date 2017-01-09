@@ -1,5 +1,6 @@
 package br.com.triadworks.javaweb.modelo;
 
+import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -37,7 +38,7 @@ public class ExecutaAlteracaoDeCaloteiroLogica implements Logica {
 		caloteiro.setDevendo(new Integer(devendo));
 		caloteiro.setDataDivida(dataDividaConvertida);
 		
-		CaloteiroDAO dao = new CaloteiroDAO();
+		CaloteiroDAO dao = new CaloteiroDAO((Connection)request.getAttribute("conexao"));
 		dao.altera(caloteiro);
 		
 		request.setAttribute("lista", dao.getLista());

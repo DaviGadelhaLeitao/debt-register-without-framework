@@ -2,6 +2,7 @@ package br.com.triadworks.javaweb.selenium;
 
 import static org.junit.Assert.assertEquals;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -37,26 +38,18 @@ public class CaloteiroDAOTestAceitacao {
 	
 	@Test
 	public void deveAdicionarUmCaloteiroAceitacao() throws SQLException {
-
 		
-//		Savepoint savepoint1 = connection.setSavepoint();
-//		
-//		try {
-//			connection.setAutoCommit(false);
-//			
-//		} catch (SQLException e1) {
-//			e1.printStackTrace();
-//		}
 		WebDriver driver = new FirefoxDriver();
-		CaloteiroDAO dao = new CaloteiroDAO();
+		Connection conexao = new ConnectionFactory().getConnection();
+		CaloteiroDAO dao = new CaloteiroDAO(conexao);
 		
 		Integer tamanhoInicialDaLista = dao.getLista().size();
 		
-		driver.get("http://localhost:8080/calote-web/adicionaCaloteiro.jsp");
+		driver.get("http://localhost:8080/cobrancaEContabilidade/adicionaCaloteiro.jsp");
 		waitForSelenium(new Long(500));
 		
 		WebElement campoDeTextoDoNome = driver.findElement(By.name("nome"));
-		campoDeTextoDoNome.sendKeys("Marcos Fernando Justino");
+		campoDeTextoDoNome.sendKeys("William Xavier");
 		waitForSelenium(new Long(100));
 
 		WebElement campoDeTextoDoEmail = driver.findElement(By.name("email"));
@@ -75,22 +68,14 @@ public class CaloteiroDAOTestAceitacao {
 		btnSubmit.click();
 		
 		waitForSelenium(new Long(1000));
-//		
-//		try {
-//			connection.commit();
-//			connection.rollback(savepoint1);
-//			
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
 		
 		Integer tamanhoFinalDaLista = dao.getLista().size();
 		
 		List<Caloteiro> lista = dao.getLista();
 		
 		assertEquals(Double.valueOf(tamanhoInicialDaLista + 1), new Double(tamanhoFinalDaLista));
-		assertEquals(lista.get(tamanhoFinalDaLista - 1).getNome(), "Marcos Fernando Justino");
-		
+		assertEquals(lista.get(tamanhoFinalDaLista - 1).getNome(), "Marcos");
+		waitForSelenium(new Long(1000));
 		driver.close();
 		driver.quit();
 	}

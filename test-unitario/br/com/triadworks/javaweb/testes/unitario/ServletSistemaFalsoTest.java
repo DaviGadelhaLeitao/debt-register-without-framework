@@ -1,6 +1,5 @@
 package br.com.triadworks.javaweb.testes.unitario;
 
-import static org.junit.Assert.*;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -35,7 +34,6 @@ public class ServletSistemaFalsoTest extends Mockito {
 		when(request.getParameter("logica")).thenReturn("ListaCaloteiro");
 		
 		new ServletSistema().service(request, response);
-		
 	}
 	
 	@Test
@@ -43,7 +41,7 @@ public class ServletSistemaFalsoTest extends Mockito {
 		
 		HttpServletRequest request = mock(HttpServletRequest.class);
 		HttpServletResponse response = mock(HttpServletResponse.class);
-		
+
 		when(request.getParameter("logica")).thenReturn("AdicionaCaloteiro");
 		when(request.getParameter("nome")).thenReturn("Joao");
 		when(request.getParameter("email")).thenReturn("email@google.com");
@@ -51,6 +49,5 @@ public class ServletSistemaFalsoTest extends Mockito {
 		when(request.getParameter("dataDivida")).thenReturn("20/12/2016");
 		
 		new ServletSistema().service(request, response);
-		
 	}
 }

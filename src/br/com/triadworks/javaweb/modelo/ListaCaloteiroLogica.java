@@ -13,7 +13,7 @@ public class ListaCaloteiroLogica implements Logica {
 	@Override
 	public void executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		CaloteiroDAO dao = new CaloteiroDAO();
+		CaloteiroDAO dao = new CaloteiroDAO((Connection)request.getAttribute("conexao"));
 
 		RequestDispatcher rd = request.getRequestDispatcher("/listaCaloteiro.jsp");
 		request.setAttribute("lista", dao.getLista());
