@@ -34,7 +34,6 @@ public class ServletSistema extends HttpServlet {
 		} catch (Exception e) {
 			System.out.println("Caught: " + e);
 			throw new CaloteiroServletException(e.getCause());
-			
 		}
 	}
 }
