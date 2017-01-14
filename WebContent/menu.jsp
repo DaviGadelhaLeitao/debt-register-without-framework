@@ -20,6 +20,16 @@
 <div class="main">
 	<div class="container">
 		<h1>Seja bem-vindo, ${usuarioLogado.nome}.</h1>
+		<div class="expressionLanguageTest">
+	<div class="container">
+		<p>
+		1. param: ${param.nome}<br>
+		2. requestScope: ${requestScope.nome}<br>
+		3. sessionScope: ${sessionScope.nome}<br>
+		4. Sem especificar: ${nome}<br>
+		</p>
+	</div>
+</div>
 	</div>
 </div>
 

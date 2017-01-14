@@ -19,17 +19,22 @@
 
 <div class="main">
 	<div class="container">
-		<form action="/sistema?logica="AutenticaUsuario" method="POST" id="formLogar">
-			Login: <input type="text" name="login" value=""/>
-			Senha: <input type="text" name="senha" value="" />
-			<input type="submit" value="Submit" />
-		
-		
-		
-		
+		<form action="sistema" method="POST" id="formLogar">
+		<input type="hidden" name="logica" value=AutenticaUsuario>
+		<input type="hidden" name="nome" value="Parametro">
+		<div class="form-group">
+			<label for="login"><p>Login:</p></label> <input type="text" name="login" value="" class="form"/>
+		</div>
+		<div class="form-group">
+			<label for="senha"><p>Senha:</p></label> <input type="text" name="senha" value="" class="form"/>
+		</div>
+			<input type="submit" value="Submit" id="submit-btn"/>
 		</form>
+		<br>
+		<p id="msgUsuario">${msgUsuario}</p>
 	</div>
 </div>
+
 
 <c:import url="footer.jsp"></c:import>
 </body>

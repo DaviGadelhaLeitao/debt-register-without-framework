@@ -1,10 +1,10 @@
 package br.com.triadworks.javaweb.modelo;
-
 import java.sql.Connection;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.triadworks.javaweb.dao.UsuarioDAO;
 
@@ -23,18 +23,16 @@ public class AutenticaUsuarioLogica implements Logica {
 		
 		if(usuarioAutenticado != null) {
 			RequestDispatcher rd = request.getRequestDispatcher("/menu.jsp");
-			request.setAttribute("usuarioLogado", usuarioAutenticado);
+			
+			request.setAttribute("nome", "RequestScope");
+			HttpSession session = request.getSession();
+			session.setAttribute("nome", "SessionScope");
+			session.setAttribute("usuarioLogado", usuarioAutenticado);
 			rd.forward(request, response);
 		} else {
 			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
 			request.setAttribute("msgUsuario", "Login ou senha inválidos.");
-			rd.forward(request, response);
+			response.sendRedirect("/login.jsp");
 		}
-		
-		
-		
 	}
-	
-	
-	
 }

@@ -14,11 +14,12 @@
 		<div class="container">
 			<p>Cobrança & Contabilidade</p>
 			<ul class="pull-right">
-				<li><a href="homepage.jsp">Página Inicial</a></li>
-				<li><a href="adicionaCaloteiro.jsp">Adicionar Caloteiro</a></li>
-				<li><a href="sistema?logica=ListaCaloteiro" id="lista-caloteiro-menu">Lista Caloteiro</a></li>
+				<li><a href="login.jsp">Login</a></li>
+				<li><a href="adicionaCaloteiro.jsp">Cadastro</a></li>
+				<li><a href="listaCaloteiro.jsp" id="lista-caloteiro-menu">Listagem</a></li>
 				<li><a href="consultaCaloteiro.jsp">Consultas</a></li>
-
+				<li><a href="menu.jsp">Menu</a></li>
+				<li><a href="#" id="usuarioLogado">${usuarioLogado.nome}</a></li>
 			</ul>
 		</div>
 	</div>

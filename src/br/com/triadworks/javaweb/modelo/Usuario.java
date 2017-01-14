@@ -7,6 +7,12 @@ public class Usuario {
 	private String login;
 	private String senha;
 	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -24,12 +30,6 @@ public class Usuario {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
 	}
 	
 	
