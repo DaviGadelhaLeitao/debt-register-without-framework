@@ -22,7 +22,7 @@ public class AutenticaUsuarioLogica implements Logica {
 		usuarioAutenticado = dao.autentica(login, senha);
 		
 		if(usuarioAutenticado != null) {
-			RequestDispatcher rd = request.getRequestDispatcher("/menu.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
 			
 			request.setAttribute("nome", "RequestScope");
 			HttpSession session = request.getSession();
@@ -32,7 +32,7 @@ public class AutenticaUsuarioLogica implements Logica {
 		} else {
 			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
 			request.setAttribute("msgUsuario", "Login ou senha inválidos.");
-			response.sendRedirect("/login.jsp");
+			response.sendRedirect("login.jsp");
 		}
 	}
 }

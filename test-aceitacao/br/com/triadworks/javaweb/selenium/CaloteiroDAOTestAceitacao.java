@@ -45,11 +45,26 @@ public class CaloteiroDAOTestAceitacao {
 		
 		Integer tamanhoInicialDaLista = dao.getLista().size();
 		
-		driver.get("http://localhost:8080/cobrancaEContabilidade/adicionaCaloteiro.jsp");
+		driver.get("http://localhost:8080/cobrancaEContabilidade/login.jsp");
+		waitForSelenium(new Long(500));
+		
+		WebElement campoDoLogin = driver.findElement(By.name("login"));
+		campoDoLogin.sendKeys("Handerson");
+		
+		WebElement campoDoSenha = driver.findElement(By.name("senha"));
+		campoDoSenha.sendKeys("123");
+		waitForSelenium(new Long(500));
+		
+		WebElement submitButton = driver.findElement(By.id("submit-btn"));
+		submitButton.click();
+		waitForSelenium(new Long(500));
+		
+		WebElement adicionaLink = driver.findElement(By.id("adicionaLink"));
+		adicionaLink.click();
 		waitForSelenium(new Long(500));
 		
 		WebElement campoDeTextoDoNome = driver.findElement(By.name("nome"));
-		campoDeTextoDoNome.sendKeys("Novo-ze2");
+		campoDeTextoDoNome.sendKeys("Novo-ze333");
 		waitForSelenium(new Long(100));
 
 		WebElement campoDeTextoDoEmail = driver.findElement(By.name("email"));
@@ -74,7 +89,7 @@ public class CaloteiroDAOTestAceitacao {
 		List<Caloteiro> lista = dao.getLista();
 		
 		assertEquals(Double.valueOf(tamanhoInicialDaLista + 1), new Double(tamanhoFinalDaLista));
-		assertEquals("Novo-ze2", lista.get(tamanhoFinalDaLista - 1).getNome());
+		assertEquals("Novo-ze333", lista.get(tamanhoFinalDaLista - 1).getNome());
 		waitForSelenium(new Long(1000));
 		driver.close();
 		driver.quit();

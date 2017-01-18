@@ -15,7 +15,7 @@
 	
 </head>
 <body>
-<c:import url="header.jsp"></c:import>
+<c:import url="header2.jsp"></c:import>
 
 <div class="main">
 	<div class="container">
@@ -23,7 +23,7 @@
 		<input type="hidden" name="logica" value=AutenticaUsuario>
 		<input type="hidden" name="nome" value="Parametro">
 		<div class="form-group">
-			<label for="login"><p>Login:</p></label> <input type="text" name="login" value="" class="form"/>
+			<label for="login"><p>Login:</p></label> <input type="text" name="login" value="" class="form" id="login"/>
 		</div>
 		<div class="form-group">
 			<label for="senha"><p>Senha:</p></label> <input type="text" name="senha" value="" class="form"/>

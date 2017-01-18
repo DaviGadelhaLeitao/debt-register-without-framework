@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Cadastro</title>
+
 <link rel="stylesheet" type="text/css" href="css/adiciona-caloteiro.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -19,7 +20,7 @@
 	<div class="main">
 		<div class="container">
 			<div class="adiciona-caloteiro-form">
-				<form action="sistema" method="POST">
+				<form action="sistema" id="formAdicionarCaloteiro" method="POST">
 				<input type="hidden" name="logica" value=AdicionaCaloteiro>
 					<div class="form-group">
 						<label for="nome">Nome:</label> <input type="text"
@@ -27,7 +28,7 @@
 					</div>
 					<div class="form-group">
 						<label for="email">Email:</label> <input type="text"
-							class="form-control" id="email" name="email" />
+							class="form-control" id="email" name="email"/>
 					</div>
 					<div class="form-group">
 						<label for="devendo">Devendo R$:</label> <input type="text"
@@ -44,6 +45,10 @@
 	</div>
 
 	<c:import url="footer.jsp"></c:import>
-	
+	<script type="text/javascript" src="jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="jquery.maskMoney.min.js"></script>
+	<script type="text/javascript" src="jquery.inputmask.bundle.js"></script>
+	<script type="text/javascript" src="jquery.validate.js"></script>
+	<script type="text/javascript" src="js/mascaras.js"></script>
 </body>
 </html>
