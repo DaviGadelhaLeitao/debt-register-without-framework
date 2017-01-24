@@ -45,7 +45,8 @@
 							<a id="dropdown-link" href="#">${usuarioLogado.nome} <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Submenu 1-1</a></li>
-								<li><a href="sistema?logica=LogoutUsuario">Logout</a></li>
+								<li><a href="#">Submenu 1-2</a></li>
+								<li><a href="#">Logout</a></li>
 							</ul>
 						</li>
 						

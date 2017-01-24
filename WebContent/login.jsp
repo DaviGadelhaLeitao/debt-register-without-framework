@@ -15,7 +15,7 @@
 	
 </head>
 <body>
-<c:import url="headerPaginaLogin.jsp"></c:import>
+<c:import url="header2.jsp"></c:import>
 
 <div class="main">
 	<div class="container">
@@ -37,6 +37,5 @@
 
 
 <c:import url="footer.jsp"></c:import>
-<script type="text/javascript" src="jquery-3.1.1.js"></script>
 </body>
 </html>

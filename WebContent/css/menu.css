@@ -1,0 +1,20 @@
+#letter-spacing-3px {
+  letter-spacing: 3px; }
+
+#submit-btn {
+  margin-left: 30px; }
+
+html {
+  background-color: gray; }
+
+body {
+  font-family: Raleway; }
+
+.main {
+  padding-top: 210px;
+  padding-bottom: 210px; }
+  .main h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 60px; }
+
+/*# sourceMappingURL=menu.css.map */
