@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="cobrançaEContabilidade" default="war">
+
+	<path id="compile.classpath">
+		<fileset dir="WebContent/WEB-INF/lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="init" depends="clean">
+		<tstamp>
+		</tstamp>
+		<mkdir dir="build/classes" />
+		<mkdir dir="dist" />
+	</target>
+
+	<target name="compile" depends="init" description="compile the source">
+		<javac destdir="build/classes" srcdir="src">
+			<classpath refid="compile.classpath">
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="runTests" depends="compile">
+		<junit haltonfailure="yes" showoutput="no" printsummary="on">
+			<batchtest todir="build/test-report">
+				<formatter type="xml"/>				
+				<fileset dir="test">
+					<include name="**/*Test.java"/>
+				</fileset>
+			</batchtest>
+			<classpath>
+				<pathelement location="build/classes"/>
+				<pathelement location="build/classes-test"/>
+				<fileset dir="WebContent/WEB-INF/lib">
+					<include name="*.jar"/>
+				</fileset>
+			</classpath>
+		</junit>
+	</target>
+
+	<target name="war" depends="runTests">
+		<war destfile="dist/cobrancaEContabilidade.war" webxml="WebContent/WEB-INF/web.xml">
+			<fileset dir="WebContent" />
+			<lib dir="WebContent/WEB-INF/lib" />
+			<classes dir="build/classes" />
+		</war>
+	</target>
+
+	<target name="clean">
+		<delete dir="build">
+		</delete>
+		<delete dir="dist">
+		</delete>
+	</target>
+
+</project>

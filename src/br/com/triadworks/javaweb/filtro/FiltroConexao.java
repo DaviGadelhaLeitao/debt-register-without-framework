@@ -18,9 +18,13 @@ import br.com.triadworks.javaweb.servlets.CaloteiroServletException;
 @WebFilter(filterName="FiltroConexao", urlPatterns="/sistema")
 public class FiltroConexao implements Filter {
 
+
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		Filter.super.init(filterConfig);
+	}
+
+	@Override
+	public void destroy() {
 	}
 
 	@Override
@@ -35,11 +39,6 @@ public class FiltroConexao implements Filter {
 			e.printStackTrace();
 			throw new CaloteiroServletException("Erro ao tentar fechar conexão com o banco.");
 		}
-	}
-	
-	@Override
-	public void destroy() {
-		Filter.super.destroy();
 	}
 
 }

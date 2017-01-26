@@ -18,7 +18,7 @@ import br.com.triadworks.javaweb.dao.CaloteiroDAO;
 import br.com.triadworks.javaweb.dao.ConnectionFactory;
 import br.com.triadworks.javaweb.modelo.Caloteiro;
 
-public class CaloteiroDAOTestAceitacao {
+public class CaloteiroDAOAceitacaoTest {
 	
 	private java.sql.Connection connection;
 	
@@ -50,6 +50,7 @@ public class CaloteiroDAOTestAceitacao {
 		
 		WebElement campoDoLogin = driver.findElement(By.name("login"));
 		campoDoLogin.sendKeys("Handerson");
+		waitForSelenium(new Long(100));
 		
 		WebElement campoDoSenha = driver.findElement(By.name("senha"));
 		campoDoSenha.sendKeys("123");
@@ -57,11 +58,11 @@ public class CaloteiroDAOTestAceitacao {
 		
 		WebElement submitButton = driver.findElement(By.id("submit-btn"));
 		submitButton.click();
-		waitForSelenium(new Long(500));
+		waitForSelenium(new Long(1000));
 		
 		WebElement adicionaLink = driver.findElement(By.id("adicionaLink"));
 		adicionaLink.click();
-		waitForSelenium(new Long(500));
+		waitForSelenium(new Long(1000));
 		
 		WebElement campoDeTextoDoNome = driver.findElement(By.name("nome"));
 		campoDeTextoDoNome.sendKeys("Novo-ze333");
@@ -81,7 +82,6 @@ public class CaloteiroDAOTestAceitacao {
 		
 		WebElement btnSubmit = driver.findElement(By.id("btn-submit"));
 		btnSubmit.click();
-		
 		waitForSelenium(new Long(1000));
 		
 		Integer tamanhoFinalDaLista = dao.getLista().size();
@@ -94,6 +94,7 @@ public class CaloteiroDAOTestAceitacao {
 		driver.close();
 		driver.quit();
 	}
+	
 
 	private void waitForSelenium(Long time) {
 		try {

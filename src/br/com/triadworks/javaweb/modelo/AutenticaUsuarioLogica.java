@@ -10,7 +10,6 @@ import br.com.triadworks.javaweb.dao.UsuarioDAO;
 
 public class AutenticaUsuarioLogica implements Logica {
 
-	@Override
 	public void executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		Usuario usuarioAutenticado = null;

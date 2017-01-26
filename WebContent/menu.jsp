@@ -5,9 +5,9 @@
 <html>
 <head >
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>login</title>
+<title>Menu</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="css/menu.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -15,26 +15,23 @@
 	
 </head>
 <body>
-<c:import url="header2.jsp"></c:import>
+<c:import url="header.jsp"></c:import>
 
 <div class="main">
 	<div class="container">
-		<form action="sistema" method="POST" id="formLogar">
-		<input type="hidden" name="logica" value=AutenticaUsuario>
-		<input type="hidden" name="nome" value="Parametro">
-		<div class="form-group">
-			<label for="login"><p>Login:</p></label> <input type="text" name="login" value="" class="form" id="login"/>
-		</div>
-		<div class="form-group">
-			<label for="senha"><p>Senha:</p></label> <input type="password" name="senha" value="" class="form"/>
-		</div>
-			<input type="submit" value="Submit" id="submit-btn"/>
-		</form>
-		<br>
-		<p id="msgUsuario">${msgUsuario}</p>
+		<h1>Seja bem-vindo, ${usuarioLogado.nome}.</h1>
+		<div class="expressionLanguageTest">
+	<div class="container">
+		<p>
+		1. param: ${param.nome}<br>
+		2. requestScope: ${requestScope.nome}<br>
+		3. sessionScope: ${sessionScope.nome}<br>
+		4. Sem especificar: ${nome}<br>
+		</p>
 	</div>
 </div>
-
+	</div>
+</div>
 
 <c:import url="footer.jsp"></c:import>
 </body>
