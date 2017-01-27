@@ -7,6 +7,13 @@
 		</fileset>
 	</path>
 
+	<target name="clean">
+		<delete dir="target-build">
+		</delete>
+		<delete dir="dist">
+		</delete>
+	</target>
+
 	<target name="init" depends="clean">
 		<tstamp>
 		</tstamp>
@@ -17,34 +24,35 @@
 	</target>
 
 	<target name="compile" depends="init" description="compile the source">
-			<javac destdir="target-build/classes" srcdir="src">
-				<classpath refid="compile.classpath">
-				</classpath>
-			</javac>
-		</target>
-	
-	<target name="compile-test" depends="compile" description="compile the source of tests">
-		<javac destdir="target-build/classes-test" srcdir="test">
-			<classpath>
-				<pathelement location="target-build/classes"/>
-				<path refid="compile.classpath"></path>
+		<javac destdir="target-build/classes" srcdir="src">
+			<classpath refid="compile.classpath">
 			</classpath>
 		</javac>
 	</target>
-	
+
+	<target name="compile-test" depends="compile" description="compile the source of tests">
+		<javac destdir="target-build/classes-test" srcdir="test">
+			<classpath>
+				<pathelement location="target-build/classes" />
+				<path refid="compile.classpath">
+				</path>
+			</classpath>
+		</javac>
+	</target>
+
 	<target name="runTests" depends="compile-test">
 		<junit haltonfailure="yes" showoutput="no" printsummary="on">
 			<batchtest todir="target-build/test-report">
-				<formatter type="xml"/>				
+				<formatter type="xml" />
 				<fileset dir="test">
-					<include name="**/*Test.java"/>
+					<include name="**/*Test.java" />
 				</fileset>
 			</batchtest>
 			<classpath>
-				<pathelement location="target-build/classes"/>
-				<pathelement location="target-build/classes-test"/>
+				<pathelement location="target-build/classes" />
+				<pathelement location="target-build/classes-test" />
 				<fileset dir="WebContent/WEB-INF/lib">
-					<include name="*.jar"/>
+					<include name="*.jar" />
 				</fileset>
 			</classpath>
 		</junit>
@@ -56,13 +64,6 @@
 			<lib dir="WebContent/WEB-INF/lib" />
 			<classes dir="target-build/classes" />
 		</war>
-	</target>
-
-	<target name="clean">
-		<delete dir="target-build">
-		</delete>
-		<delete dir="dist">
-		</delete>
 	</target>
 
 </project>

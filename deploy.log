@@ -1,0 +1,38 @@
+27/01/2017 14:35:28 - /usr/local/tomcat-homologacao/apache-tomcat-9.0.0.M17/bin/./shutdown.sh
+27/01/2017 14:35:33 - /usr/local/tomcat-homologacao/apache-tomcat-9.0.0.M17/bin/./startup.sh
+27/01/2017 14:41:45 - building war
+27/01/2017 14:41:50 - backingup old war
+27/01/2017 14:41:50 - /usr/local/tomcat-homologacao/apache-tomcat-9.0.0.M17/bin/./shutdown.sh
+27/01/2017 14:41:50 - deleting old war
+27/01/2017 14:41:50 - transfering new war to /usr/local/tomcat-homologacao/apache-tomcat-9.0.0.M17
+27/01/2017 14:41:55 - /usr/local/tomcat-homologacao/apache-tomcat-9.0.0.M17/bin/./startup.sh
+27/01/2017 14:51:35 - Building war
+27/01/2017 14:52:09 - Back up old war
+27/01/2017 14:52:10 - /usr/local/tomcat-homologacao/apache-tomcat-9.0.0.M17/bin/./shutdown.sh
+27/01/2017 14:52:10 - Deleting old war
+27/01/2017 14:52:10 - Transfering new war to /usr/local/tomcat-homologacao/apache-tomcat-9.0.0.M17
+27/01/2017 14:52:15 - /usr/local/tomcat-homologacao/apache-tomcat-9.0.0.M17/bin/./startup.sh
+27/01/2017 14:54:33 - Building war.
+27/01/2017 14:55:08 - Backup old war.
+27/01/2017 14:55:08 - Shutdown tomcat.
+27/01/2017 14:55:08 - Deleting old war.
+27/01/2017 14:55:08 - Transfering new war to /usr/local/tomcat-homologacao/apache-tomcat-9.0.0.M17
+27/01/2017 14:55:13 - Startup tomcat.
+27/01/2017 14:57:19 - STARTING NEW BUILD.
+27/01/2017 14:57:19 - Building war.
+27/01/2017 14:57:53 - Backup old war.
+27/01/2017 14:57:53 - Shutdown tomcat.
+27/01/2017 14:57:53 - Deleting old war.
+27/01/2017 14:57:53 - Transfering new war to /usr/local/tomcat-homologacao/apache-tomcat-9.0.0.M17
+27/01/2017 14:57:58 - Startup tomcat.
+27/01/2017 14:57:58 - DEPLOY FINISHED.
+
+27/01/2017 15:00:13 - STARTING NEW BUILD.
+27/01/2017 15:00:13 - Building war.
+27/01/2017 15:00:48 - Backup old war.
+27/01/2017 15:00:48 - Shutdown tomcat.
+27/01/2017 15:00:48 - Deleting old war.
+27/01/2017 15:00:48 - Transfering new war to the webapps directory.
+27/01/2017 15:00:53 - Startup tomcat.
+27/01/2017 15:00:53 - DEPLOY FINISHED.
+
