@@ -21,15 +21,10 @@ public class AutenticaUsuarioLogica implements Logica {
 		usuarioAutenticado = dao.autentica(login, senha);
 		
 		if(usuarioAutenticado != null) {
-			RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
-			
-			request.setAttribute("nome", "RequestScope");
 			HttpSession session = request.getSession();
-			session.setAttribute("nome", "SessionScope");
 			session.setAttribute("usuarioLogado", usuarioAutenticado);
-			rd.forward(request, response);
+			response.sendRedirect("menu.jsp");
 		} else {
-			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
 			request.setAttribute("msgUsuario", "Login ou senha inválidos.");
 			response.sendRedirect("login.jsp");
 		}
