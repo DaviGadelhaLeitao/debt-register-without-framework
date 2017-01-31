@@ -51,7 +51,7 @@
 	<script type="text/javascript" src="jquery.inputmask.bundle.js"></script>
 	<script type="text/javascript" src="jquery.validate.js"></script>
 	<script type="text/javascript" src="js/mascaras.js"></script>
-	<script type="text/javascript" src="jquery-3.1.1.js"></script>
+	
 	<script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"

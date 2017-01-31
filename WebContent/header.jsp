@@ -7,7 +7,7 @@
 
 			<div class="col-md-8">
 
-				<ul class="nav nav-pills" id="title-ul">
+				<ul class="nav nav-pills pull-right" id="title-ul">
 					<li role="presentation"><a href="homepage.jsp">Homepage</a></li>
 					<li role="presentation"><a href="adicionaCaloteiro.jsp"
 						id="adicionaLink">Cadastro</a></li>
@@ -19,7 +19,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="#">Submenu 1-1</a></li>
 							<li><a href="#">Submenu 1-2</a></li>
-							<li><a href="#">Logout</a></li>
+							<li><a href="sistema?logica=LogoutUsuario">Logout</a></li>
 						</ul></li>
 
 				</ul>
