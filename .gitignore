@@ -2,6 +2,7 @@
 .settings
 .classpath
 .gradle
+.sass-cache
 
 *.map
 *.class
