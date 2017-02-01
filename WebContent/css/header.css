@@ -11,7 +11,8 @@
 .header {
   background-color: #1A3C36;
   color: #fff;
-  font-size: 18px;
-  font-family: Raleway; }
+  font-size: 16px; }
+  .header a {
+    color: #fff; }
 
 /*# sourceMappingURL=header.css.map */

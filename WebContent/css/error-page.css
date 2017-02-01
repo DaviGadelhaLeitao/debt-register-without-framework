@@ -1,14 +1,11 @@
-#letter-spacing-3px {
-  letter-spacing: 3px; }
-
 html {
-  background-color: gray; }
+  background-color: #1A3C36; }
 
 body {
   font-family: Raleway; }
 
 .main {
-  background: url("../images/caloteiroBg.jpg") no-repeat center center;
+  background: url("../img/caloteiroBg.jpg") no-repeat center center;
   color: #fff;
   background-size: cover;
   padding-bottom: 200px;

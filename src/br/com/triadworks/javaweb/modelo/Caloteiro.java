@@ -7,7 +7,7 @@ public class Caloteiro {
 	private Long id;
 	private String nome;
 	private String email;
-	private Integer devendo;
+	private Double devendo;
 	private Calendar dataDivida;
 	
 	public Long getId() {
@@ -28,11 +28,11 @@ public class Caloteiro {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Integer getDevendo() {
+	public Double getDevendo() {
 		return devendo;
 	}
-	public void setDevendo(Integer devendo) {
-		this.devendo = devendo;
+	public void setDevendo(Double i) {
+		this.devendo = i;
 	}
 	public Calendar getDataDivida() {
 		return dataDivida;

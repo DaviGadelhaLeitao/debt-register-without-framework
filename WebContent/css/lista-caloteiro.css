@@ -22,15 +22,15 @@
   margin-top: 5px;
   margin-bottom: 5px; }
 
+html {
+  background-color: #1A3C36; }
+
 .main {
-  background: url("../images/caloteiroBg.jpg") no-repeat center center;
-  color: #fff;
+  min-height: 600px;
+  background: url("../img/caloteiroBg.jpg") no-repeat center center;
   background-size: cover;
-  margin-bottom: 200px;
   font-family: Raleway; }
-  .main a {
-    color: #fff; }
-    .main a:hover {
-      text-decoration: none; }
+  .main td {
+    border: 1px solid #000; }
 
 /*# sourceMappingURL=lista-caloteiro.css.map */

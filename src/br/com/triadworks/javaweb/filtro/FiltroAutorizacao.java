@@ -35,7 +35,7 @@ public class FiltroAutorizacao implements Filter {
 		if(logica == null) {
 			logica = "";
 		}
-		if(uri.equals("login.jsp") || logica.endsWith("AutenticaUsuario") || uri.endsWith("png") || uri.endsWith("css")) {
+		if(uri.equals("login.jsp") || logica.endsWith("AutenticaUsuario") || uri.endsWith("png")|| uri.endsWith("jpg") || uri.endsWith("css")) {
 			chain.doFilter(request, response);
 		} else {
 			Usuario usuarioLogado = (Usuario) req.getSession().getAttribute("usuarioLogado");

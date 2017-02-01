@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,mBAAoB;EACnB,cAAc,EAAE,GAAG;;AAEnB,IAAK;EACL,gBAAgB,EAAE,IAAI;;AAEvB,IAAK;EACJ,WAAW,EAAE,OAAO;;AAEpB,KAAM;EACN,WAAW,EAAE,KAAK;EAClB,cAAc,EAAE,KAAK",
-"sources": ["../scss/adiciona-caloteiro.scss"],
-"names": [],
-"file": "adiciona-caloteiro.css"
-}

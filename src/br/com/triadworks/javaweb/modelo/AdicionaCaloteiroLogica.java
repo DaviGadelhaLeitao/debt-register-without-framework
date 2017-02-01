@@ -9,6 +9,7 @@ import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.triadworks.javaweb.dao.CaloteiroDAO;
 
@@ -33,14 +34,13 @@ public class AdicionaCaloteiroLogica implements Logica {
 		
 		caloteiro.setNome(nome);
 		caloteiro.setEmail(email);
-		caloteiro.setDevendo(new Integer(devendo));
+		caloteiro.setDevendo(new Double(devendo));
 		caloteiro.setDataDivida(dataDividaConvertida);
 		
 		CaloteiroDAO dao = new CaloteiroDAO((Connection)request.getAttribute("conexao"));
 		dao.adiciona(caloteiro);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/caloteiroAdicionado.jsp");
-		rd.forward(request, response);
-		
+		HttpSession session = request.getSession();
+		session.setAttribute("caloteiroCadastrado", caloteiro);
+		response.sendRedirect("caloteiroAdicionado.jsp");
 	}
 }

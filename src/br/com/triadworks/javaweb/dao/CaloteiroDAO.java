@@ -27,7 +27,7 @@ public class CaloteiroDAO {
 
 			pstmt.setString(1, caloteiro.getNome());
 			pstmt.setString(2, caloteiro.getEmail());
-			pstmt.setInt(3, caloteiro.getDevendo());
+			pstmt.setDouble(3, caloteiro.getDevendo());
 			pstmt.setDate(4, new Date(caloteiro.getDataDivida().getTimeInMillis()));
 
 			pstmt.execute();
@@ -61,7 +61,7 @@ public class CaloteiroDAO {
 				caloteiro.setId(id);
 				caloteiro.setNome(nome);
 				caloteiro.setEmail(email);
-				caloteiro.setDevendo(new Integer(devendo));
+				caloteiro.setDevendo(new Double(devendo));
 				caloteiro.setDataDivida(dataDivida);
 
 				caloteiros.add(caloteiro);
@@ -81,7 +81,7 @@ public class CaloteiroDAO {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
 			stmt.setString(1, caloteiro.getNome());
 			stmt.setString(2, caloteiro.getEmail());
-			stmt.setInt(3, caloteiro.getDevendo());
+			stmt.setDouble(3, caloteiro.getDevendo());
 			stmt.setDate(4, new Date(caloteiro.getDataDivida().getTimeInMillis()));
 
 			stmt.setLong(5, caloteiro.getId());
@@ -123,7 +123,7 @@ public class CaloteiroDAO {
 				Long idCaloteiro = rs.getLong("id");
 				String nome = rs.getString("nome");
 				String email = rs.getString("email");
-				int devendo = rs.getInt("devendo");
+				Double devendo = rs.getDouble("devendo");
 				Calendar dataDivida = Calendar.getInstance();
 				dataDivida.setTime(rs.getDate("dataDivida"));
 

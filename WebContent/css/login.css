@@ -1,26 +1,37 @@
+#submit-btn {
+  border: 0px;
+  background-color: #1A3C36;
+  color: gray;
+  box-shadow: 0px 1px 10px 1px #1A3C36;
+  transition: 0.5s;
+  padding: 8px 14px;
+  margin: 0px;
+  border-radius: 2px; }
+  #submit-btn:hover {
+    color: #fff;
+    transition: 0.5s; }
+
 #msgUsuario {
   font-size: 20px;
   color: red; }
 
-#letter-spacing-3px {
-  letter-spacing: 3px; }
-
 html {
-  background-color: gray; }
+  background-color: #1A3C36; }
 
 body {
   font-family: Raleway; }
 
 .main {
-  padding-top: 210px;
-  padding-bottom: 210px; }
+  background: url(../img/caloteiroBg.jpg) no-repeat center center;
+  background-size: cover;
+  padding-top: 410px;
+  padding-bottom: 70px; }
   .main h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 60px; }
   .main .form {
     width: 120px;
     border: 1px solid gray;
-    border-radius: 3px;
-    margin-left: 10px; }
+    border-radius: 3px; }
 
 /*# sourceMappingURL=login.css.map */

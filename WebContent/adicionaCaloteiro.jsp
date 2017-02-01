@@ -15,47 +15,39 @@
 		crossorigin="anonymous">
 </head>
 <body>
-
 	<c:import url="header.jsp"></c:import>
-	
 	<div class="main">
 		<div class="container">
-			<div class="adiciona-caloteiro-form">
+			<div>
 				<form action="sistema" id="formAdicionarCaloteiro" method="POST">
 				<input type="hidden" name="logica" value=AdicionaCaloteiro>
 					<div class="form-group">
-						<label for="nome">Nome:</label> <input type="text"
-							class="form-control" id="nome" name="nome">
+						<label for="nome">Nome:</label>
+						<input type="text" class="form-control" id="nome" name="nome" required>
 					</div>
 					<div class="form-group">
-						<label for="email">Email:</label> <input type="text"
-							class="form-control" id="email" name="email"/>
+						<label for="email">Email:</label>
+						<input type="text" class="form-control" id="email" name="email" required>
 					</div>
 					<div class="form-group">
-						<label for="devendo">Devendo R$:</label> <input type="text"
-							class="form-control" id="devendo" name="devendo" />
+						<label for="devendo">Devendo R$:</label>
+						<input type="text" class="form-control" id="devendo" name="devendo" required>
 					</div>
 					<div class="form-group">
-						<label for="dataDivida">Data:</label> <input type="text"
-							class="form-control" id="dataDivida" name="dataDivida" />
+						<label for="dataDivida">Data:</label>
+						<input type="text" class="form-control" id="dataDivida" name="dataDivida" required>
 					</div>
-				<input type="submit" value="Salvar" id="btn-submit"/>
+					<button type="submit" id="btn-submit">Salvar</button>
 				</form>
 			</div>
 		</div>
 	</div>
-
 	<c:import url="footer.jsp"></c:import>
-	<script type="text/javascript" src="jquery-3.1.1.js"></script>
-	<script type="text/javascript" src="jquery.maskMoney.min.js"></script>
-	<script type="text/javascript" src="jquery.inputmask.bundle.js"></script>
-	<script type="text/javascript" src="jquery.validate.js"></script>
-	<script type="text/javascript" src="js/mascaras.js"></script>
-	
-	<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	crossorigin="anonymous"></script>
-	<script type="text/javascript" src="js/header.js"></script>
 </body>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript" src="jquery.maskMoney.min.js"></script>
+<script type="text/javascript" src="jquery.inputmask.bundle.js"></script>
+<script type="text/javascript" src="jquery.validate.js"></script>
+<script type="text/javascript" src="js/header.js"></script>
+<script type="text/javascript" src="js/mascaras.js"></script>
 </html>

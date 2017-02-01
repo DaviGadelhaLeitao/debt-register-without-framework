@@ -1,14 +1,24 @@
-#letter-spacing-3px {
-  letter-spacing: 3px; }
+#btn-submit {
+  border: 0px;
+  background-color: #1A3C36;
+  color: gray;
+  box-shadow: 0px 1px 10px 1px #1A3C36;
+  transition: 0.5s;
+  padding: 8px 14px;
+  margin: 0px;
+  border-radius: 2px; }
+  #btn-submit:hover {
+    color: #fff;
+    transition: 0.5s; }
 
 html {
-  background-color: gray; }
+  background-color: #1A3C36; }
 
 body {
   font-family: Raleway; }
 
 .main {
-  padding-top: 100px;
-  padding-bottom: 100px; }
+  padding-top: 140px;
+  padding-bottom: 140px; }
 
 /*# sourceMappingURL=adiciona-caloteiro.css.map */

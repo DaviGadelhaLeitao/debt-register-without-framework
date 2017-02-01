@@ -1,0 +1,15 @@
+@import "helper/placeholders";
+
+html {
+	background-color: #1A3C36;
+}
+body {
+	font-family: Raleway;
+}
+.main {
+	height: 600px;
+	background: url(../img/caloteiroBg.jpg) no-repeat center center;
+	background-size: cover;
+	padding-top: 310px;
+	padding-bottom: 60px;
+}

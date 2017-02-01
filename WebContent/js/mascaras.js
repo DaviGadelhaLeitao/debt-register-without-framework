@@ -1,11 +1,7 @@
-/**
- * 
- */
-
-jQuery.validator.setDefaults({
-  debug: true,
-  success: "valid"
-});
+//jQuery.validator.setDefaults({
+//  debug: true,
+//  success: "valid"
+//});
 
 $(document).ready(function() {
 	$("#devendo").maskMoney();

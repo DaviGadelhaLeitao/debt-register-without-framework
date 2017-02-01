@@ -55,7 +55,7 @@ public class CaloteiroDAOTest {
 		caloteiro.setNome(nome);
 		caloteiro.setEmail("joao@hotmail.com");
 		caloteiro.setDataDivida(Calendar.getInstance());
-		caloteiro.setDevendo(300);
+		caloteiro.setDevendo(new Double(300));
 		return caloteiro;
 	}
 	
@@ -125,7 +125,7 @@ public class CaloteiroDAOTest {
 		CaloteiroDAO dao = new CaloteiroDAO(conexao);
 		dao.adiciona(caloteiro);
 		String oldName = caloteiro.getNome();
-		Integer oldDevendo = caloteiro.getDevendo();
+		Double oldDevendo = caloteiro.getDevendo();
 		String oldEmail = caloteiro.getEmail();
 		Long oldId = dao.getLista().get(0).getId();
 		caloteiro.setNome("newName");

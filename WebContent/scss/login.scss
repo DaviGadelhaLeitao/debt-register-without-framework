@@ -1,19 +1,23 @@
+@import "helper/placeholders";
+	
 #msgUsuario {
 	font-size: 20px;
 	color: red;
 }
-#letter-spacing-3px {
-	letter-spacing: 3px;
+#submit-btn {
+	@extend %btn-default;
 }
 html {
-	background-color: gray;
+	background-color: #1A3C36;
 }
 body {
 	font-family: Raleway;
 }
 	.main {
-		padding-top: 210px;
-		padding-bottom: 210px;
+		background: url(../img/caloteiroBg.jpg) no-repeat center center;
+		background-size: cover;
+		padding-top: 410px;
+		padding-bottom: 70px;
 		h1 {
 			font-family: 'Roboto', sans-serif;
 			font-size: 60px;
@@ -22,6 +26,5 @@ body {
 			width: 120px;
 			border: 1px solid gray;
 			border-radius: 3px;
-			margin-left: 10px;
 		}
 }

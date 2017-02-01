@@ -35,7 +35,7 @@ public class ExecutaAlteracaoDeCaloteiroLogica implements Logica {
 		caloteiro.setId(id);
 		caloteiro.setNome(nome);
 		caloteiro.setEmail(email);
-		caloteiro.setDevendo(new Integer(devendo));
+		caloteiro.setDevendo(new Double(devendo));
 		caloteiro.setDataDivida(dataDividaConvertida);
 		
 		CaloteiroDAO dao = new CaloteiroDAO((Connection)request.getAttribute("conexao"));

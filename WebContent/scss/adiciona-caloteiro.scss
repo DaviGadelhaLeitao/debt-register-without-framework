@@ -1,13 +1,16 @@
-#letter-spacing-3px {
-	letter-spacing: 3px;
+@import "helper/placeholders";
+
+#btn-submit {
+	@extend %btn-default;
 }
-	html {
-	background-color: gray;
+
+html {
+	background-color: #1A3C36;
 }
 body {
 	font-family: Raleway;
 }
-	.main {
-	padding-top: 100px;
-	padding-bottom: 100px;
+.main {
+	padding-top: 140px;
+	padding-bottom: 140px;
 }
