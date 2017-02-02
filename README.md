@@ -102,5 +102,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* [TriadWorks](www.triadworks.com.br)
+* [TriadWorks](http://www.triadworks.com.br)
 
