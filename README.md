@@ -1,8 +1,8 @@
-# Project Title
+# Debts Register
 
 A complete CRUD web application using HTML, CSS, SaSS, Bootstrap, Servlets, JSP, JDBC, MySQL, JavaScript, jQuery. Unit (mockito), integration and acceptance tests were done using jUNIT. Selenium is used for browser automation.
 
-A automed build system is supplied with Ant and a sample basic deploy is done locally with a shell script. Future versions of this application will evolve to use first Maven and then Gradle.
+A automed build system is supplied with Ant and a basic deploy example is done locally with a shell script. Future versions of this application will evolve to use first Maven and then Gradle.
 
 ## Getting Started
 
@@ -10,10 +10,19 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Java SE 8
+Tomcat 9
+jUnit 4.12
+Servlets 1.2
+jQuery 3.1.1
+Mockito 1.10.19
+JSTL 1.2
+mySQL connector 5.1.40
+
+How to install them?
 
 ```
-Give examples
+Space reserved for future examples.
 ```
 
 ### Installing
@@ -60,9 +69,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Ant](ant.apache.org) - Pure Java build tool.
 
 ## Contributing
 
@@ -70,13 +77,13 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Davi Leitão** - *Initial work* - 
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/DaviGadelhaLeitao/DebtsRegister/contributors) who participated in this project.
 
 ## License
 
@@ -84,7 +91,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* [TriadWorks](www.triadworks.com.br)
 
