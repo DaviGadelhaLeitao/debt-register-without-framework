@@ -80,11 +80,19 @@ Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
+```
+Space reserved for future.
+```
+
 ## Versioning
+
+```
+Space reserved for future.
+```
 
 ## Authors
 
-* **Davi Leitão** - *Initial work* - 
+* **Davi Leitão** 
 
 See also the list of [contributors](https://github.com/DaviGadelhaLeitao/DebtsRegister/contributors) who participated in this project.
 
