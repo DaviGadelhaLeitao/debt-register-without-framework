@@ -11,12 +11,19 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 Java SE 8
+
 Tomcat 9
+
 jUnit 4.12
+
 Servlets 1.2
+
 jQuery 3.1.1
+
 Mockito 1.10.19
+
 JSTL 1.2
+
 mySQL connector 5.1.40
 
 How to install them?
@@ -73,11 +80,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Versioning
-
-
 
 ## Authors
 
