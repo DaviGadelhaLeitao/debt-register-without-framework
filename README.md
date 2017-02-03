@@ -81,13 +81,15 @@ Add additional notes about how to deploy this on a live system
 ## Contributing
 
 ```
-Space reserved for future.
+reserved space
+
 ```
 
 ## Versioning
 
 ```
-Space reserved for future.
+reserved space
+
 ```
 
 ## Authors

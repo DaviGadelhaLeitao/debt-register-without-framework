@@ -73,7 +73,7 @@ public class CaloteiroDAOAceitacaoTest {
 		waitForSelenium(new Long(100));
 		
 		WebElement campoDeTextoDaDivida = driver.findElement(By.name("devendo"));
-		campoDeTextoDaDivida.sendKeys("800");
+		campoDeTextoDaDivida.sendKeys("8000000");
 		waitForSelenium(new Long(100));
 		
 		WebElement campoDeTextoDaData = driver.findElement(By.name("dataDivida"));
