@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 	$("#devendo").maskMoney();
 	$("#dataDivida").inputmask("dd/mm/yyyy");
@@ -24,4 +23,12 @@ $(document).ready(function() {
 			}
 		}
 	});
+	$("#formAdicionarCaloteiro").submit(function() {
+		$("#devendo")[0].value = $("#devendo").maskMoney('unmasked')[0];
+	});
+	/*
+	$("#formAdicionarCaloteiro").submit(function() {
+		$("#devendo")[0].value = $("#devendo")[0].value.replace(',','');
+	});
+	*/
 });
