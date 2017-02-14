@@ -15,6 +15,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
+<%=session.getAttribute("caloteiroCadastrado").toString() %>
 	<c:import url="header.jsp"></c:import>
 	<div class="main">
 		<div class="container">

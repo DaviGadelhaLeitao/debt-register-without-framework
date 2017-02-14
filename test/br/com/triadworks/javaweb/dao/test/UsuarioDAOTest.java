@@ -1,5 +1,7 @@
 package br.com.triadworks.javaweb.dao.test;
 
+import static org.junit.Assert.assertEquals;
+
 import java.sql.Connection;
 
 import org.junit.Test;
@@ -9,11 +11,8 @@ import br.com.triadworks.javaweb.dao.UsuarioDAO;
 import br.com.triadworks.javaweb.modelo.Usuario;
 import junit.framework.AssertionFailedError;
 
-import static junit.framework.Assert.*;
-
 public class UsuarioDAOTest {
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void deveRetornarUmUsuarioDoBanco() {
 

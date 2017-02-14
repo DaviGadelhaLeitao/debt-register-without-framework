@@ -40,5 +40,9 @@ public class Caloteiro {
 	public void setDataDivida(Calendar dataDivida) {
 		this.dataDivida = dataDivida;
 	}
+	@Override
+	public String toString() {
+		return "Caloteiro [nome=" + nome + "]";
+	}
 	
 }

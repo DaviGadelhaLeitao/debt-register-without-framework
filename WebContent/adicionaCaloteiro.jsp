@@ -19,7 +19,7 @@
 	<div class="main">
 		<div class="container">
 			<div>
-				<form action="sistema" id="formAdicionarCaloteiro" method="POST">
+				<form action="sistema" id="formAdicionarCaloteiro" method="POST" accept-charset="UTF-8">
 				<input type="hidden" name="logica" value=AdicionaCaloteiro>
 					<div class="form-group">
 						<label for="nome">Nome:</label>

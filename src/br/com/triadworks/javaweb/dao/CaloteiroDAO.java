@@ -20,7 +20,7 @@ public class CaloteiroDAO {
 	}
 
 	public void adiciona(Caloteiro caloteiro) {
-		String sql = "insert into caloteiro " + "(nome, email, devendo, dataDivida)" + "values (?,?,?,?)";
+		String sql = "INSERT INTO caloteiro " + "(nome, email, devendo, dataDivida)" + "values (?,?,?,?)";
 
 		try {
 			PreparedStatement pstmt = conexao.prepareStatement(sql);
