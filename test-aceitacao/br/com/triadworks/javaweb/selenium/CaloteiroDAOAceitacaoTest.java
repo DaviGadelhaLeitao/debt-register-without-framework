@@ -65,7 +65,7 @@ public class CaloteiroDAOAceitacaoTest {
 		waitForSelenium(new Long(1000));
 		
 		WebElement campoDeTextoDoNome = driver.findElement(By.name("nome"));
-		campoDeTextoDoNome.sendKeys("Davi Gadelha Leitão");
+		campoDeTextoDoNome.sendKeys("Davi Gadelha Leitao");
 		waitForSelenium(new Long(100));
 
 		WebElement campoDeTextoDoEmail = driver.findElement(By.name("email"));
@@ -89,7 +89,7 @@ public class CaloteiroDAOAceitacaoTest {
 		List<Caloteiro> lista = dao.getLista();
 		
 		assertEquals(Double.valueOf(tamanhoInicialDaLista + 1), new Double(tamanhoFinalDaLista));
-		assertEquals("Oçãoãoão", lista.get(tamanhoFinalDaLista - 1).getNome());
+		assertEquals("Davi Gadelha Leitao", lista.get(tamanhoFinalDaLista - 1).getNome());
 		waitForSelenium(new Long(1000));
 		driver.close();
 		driver.quit();
